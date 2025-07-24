@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instagram NFC</title>
+    <script>
+      function openInstagram() {
+        const username = "thomas_dsvl";
+        const deepLink = "instagram://user?username=" + username;
+        const fallbackLink = "https://instagram.com/" + username;
+
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = deepLink;
+        document.body.appendChild(iframe);
+
+        setTimeout(() => {
+          window.location.href = fallbackLink;
+        }, 1200);
+      }
+    </script>
+  </head>
+  <body onload="openInstagram()">
+    <p>Redirection vers Instagram...</p>
+  </body>
+</html>
